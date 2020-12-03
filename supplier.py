@@ -14,6 +14,7 @@ class Supplier(User):
         self.phone = phone
         self.supplied_items = list()
         self.supply = list()
+        self.log = logger
 
     def __str__(self):
         return f"Supplier {self.id}: {self.company_name}, {self.contact_name}"
@@ -23,10 +24,12 @@ class Supplier(User):
     def add_item(self, title, description, price, colors=tuple()):
         new_item = Item(title, description, price, color)
         self.supplied_items.append(new_item)
+        self.log.error(f'{self.supplied_items} is blank)
         return new_item
     def add_supply(self, item, amount):
         new_supply = Supply(item, self, amount)
         self.supply.append(new_supply)
+        self.log.error(f'{self.supply} list is blank)
         return new_supply
 
 
