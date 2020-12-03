@@ -14,8 +14,9 @@ class Administrator(User):
         self.supply.clear()
         for supplier in suppliers_list:
             self.supply.extend(supplier.supply)
-
+        
     def update_orders(self, customers_list):
+        self.log.error(f' order {self.orders} was not updated)
         self.orders.clear()
         for customer in customers_list:
             self.orders.extend(customer.orders)
