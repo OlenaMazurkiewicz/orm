@@ -8,6 +8,8 @@ class User:
         self._username = username
         self._userpass = userpass
         self.email = email
+        self.log = logger
+        self.log.info(f'New user {self._username})
 
     @property
     def username(self):
@@ -16,3 +18,4 @@ class User:
     @property
     def userpass(self):
         return '*' * len(self._userpass)
+                
