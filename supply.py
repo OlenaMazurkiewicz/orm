@@ -7,6 +7,8 @@ class Supply:
         self.item = item
         self.supplier = supplier
         self.amount = amount
+        self.log = logger
+        self.log.info(f'New supply with ID {self.id})
 
     def __str__(self):
         return f"{self.id}: {self.item} by {self.supplier}"
