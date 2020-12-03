@@ -8,6 +8,8 @@ class Item:
         self.description = description
         self.price = float(price)
         self.colors = colors
+        self.log = logger
+        self.log.info(f'New Item with ID {self.id})
 
     def __str__(self):
         return f"Item {self.id}: {self.title}, ${self.price}"
