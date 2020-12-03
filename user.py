@@ -17,5 +17,6 @@ class User:
 
     @property
     def userpass(self):
+        self.log.error(f' enter correct pass for {self._username})
         return '*' * len(self._userpass)
                 
