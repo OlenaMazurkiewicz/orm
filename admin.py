@@ -8,6 +8,7 @@ class Administrator(User):
         self.supply = list()
         self.orders = list()
         self.reviews = list()
+        self.log = logger
 
     def update_supply(self, suppliers_list):
         self.supply.clear()
