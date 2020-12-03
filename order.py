@@ -8,6 +8,8 @@ class Order:
         self.item = item
         self.amount = amount
         self.status = "New"
+        self.log = logger
+        self.log.info(f'New Order from {self.customer})
 
     def __str__(self):
         return f"Order {self.id}:\n{self.amount} x {self.item.title}, {self.item.price} per 1"
