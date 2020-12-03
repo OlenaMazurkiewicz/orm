@@ -5,7 +5,7 @@ logger.setLevel(logging.INFO)
 
 formatter = logging.Formatter('%(levelname)s: %(message)s')
 
-fh = logging.FileHandler('advanced.log')
+fh = logging.FileHandler('Simple.log')
 fh.setLevel(logging.ERROR)
 fh.setFormatter(formatter)
 
