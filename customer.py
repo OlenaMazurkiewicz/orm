@@ -17,6 +17,7 @@ class Customer(User):
         self.bonus_amount = 0
         self.orders = list()
         self.reviews = list()
+        self.lof = logger
 
     def __str__(self):
         return f"Customer {self.id}: {self.username} ({self.first_name} {self.last_name})"
@@ -24,12 +25,14 @@ class Customer(User):
     def create_order(self, item, amount):
         new_order = Order(self, item, amount)
         self.orders.append(new_order)
+        self.log.error(f'New {self.orders} was not created)
         return new_order
 
 
     def add_review(self, text, customer, score):
         new_review = Review(text, customer, score)
         self.reviews.append(new_review)
+        self.log.info(f'Customer {self.first_name} despise rewiews)
         return new_review
 
 
